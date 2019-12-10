@@ -36,7 +36,6 @@ class AnimalAdapter: BaseAdapter{
         this.context = context
     }
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         val animal = animalList[position]
         var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
@@ -48,17 +47,14 @@ class AnimalAdapter: BaseAdapter{
     }
 
     override fun getItem(position: Int): Any {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         return animalList[position]
     }
 
     override fun getItemId(position: Int): Long {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         return position.toLong()
     }
 
     override fun getCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         return animalList.size
     }
 
