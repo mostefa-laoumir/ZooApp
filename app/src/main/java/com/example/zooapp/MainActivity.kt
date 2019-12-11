@@ -1,6 +1,7 @@
 package com.example.zooapp
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -40,16 +41,30 @@ class AnimalAdapter: BaseAdapter{
         var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         if(animal.isKiller==true){
             var myView = inflater.inflate(R.layout.animal_killer_ticket,null)
-            myView.tvName.text=animal.name!!
+            myView.tvNamee.text=animal.name!!
             myView.ivAnimal.setImageResource(animal.image!!)
             myView.tvDescription.text = animal.des!!
+            myView.ivAnimal.setOnClickListener{
+                val intent = Intent(context, Main2Activity::class.java)
+                intent.putExtra("name",animal.name!!)
+                intent.putExtra("des",animal.des!!)
+                intent.putExtra("image",animal.image!!)
+                context!!.startActivity(intent)
+            }
             return myView
 
         }else{
             var myView = inflater.inflate(R.layout.animal_ticket,null)
-            myView.tvName.text=animal.name!!
+            myView.tvNamee.text=animal.name!!
             myView.ivAnimal.setImageResource(animal.image!!)
             myView.tvDescription.text = animal.des!!
+            myView.ivAnimal.setOnClickListener{
+                val intent = Intent(context, Main2Activity::class.java)
+                intent.putExtra("name",animal.name!!)
+                intent.putExtra("des",animal.des!!)
+                intent.putExtra("image",animal.image!!)
+                context!!.startActivity(intent)
+            }
             return myView
         }
 

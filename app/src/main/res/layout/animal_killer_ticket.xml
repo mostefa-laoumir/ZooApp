@@ -27,7 +27,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/tvNamee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Baboon"
