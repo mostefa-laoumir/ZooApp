@@ -9,7 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.animal_killer_ticket.view.*
 import kotlinx.android.synthetic.main.animal_ticket.view.*
+import kotlinx.android.synthetic.main.animal_ticket.view.ivAnimal
+import kotlinx.android.synthetic.main.animal_ticket.view.tvDescription
+import kotlinx.android.synthetic.main.animal_ticket.view.tvNamee
 
 class MainActivity : AppCompatActivity() {
     var animalList = ArrayList<Animal>()
@@ -29,7 +33,12 @@ class MainActivity : AppCompatActivity() {
         tvAnimalList.adapter = adapter
 
     }
-class AnimalAdapter: BaseAdapter{
+
+    fun delete(index:Int){
+        animalList.removeAt(index)
+        adapter!!.notifyDataSetChanged()
+    }
+inner class AnimalAdapter: BaseAdapter{
     var animalList = ArrayList<Animal>()
     var context:Context?= null
     constructor(context: Context, animalList :ArrayList<Animal>):super(){
@@ -51,6 +60,10 @@ class AnimalAdapter: BaseAdapter{
                 intent.putExtra("image",animal.image!!)
                 context!!.startActivity(intent)
             }
+            myView.ivDel.setOnClickListener{
+                    delete(position)
+            }
+
             return myView
 
         }else{

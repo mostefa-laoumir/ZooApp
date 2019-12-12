@@ -39,6 +39,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Baboon is the animal that took care of Simba" />
+
+            <ImageView
+                android:id="@+id/ivDel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                app:srcCompat="@android:drawable/ic_delete" />
         </LinearLayout>
     </LinearLayout>
 
