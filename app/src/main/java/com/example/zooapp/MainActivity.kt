@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.animal_killer_ticket.view.*
+import kotlinx.android.synthetic.main.animal_killer_ticket.view.ivDel
 import kotlinx.android.synthetic.main.animal_ticket.view.*
 import kotlinx.android.synthetic.main.animal_ticket.view.ivAnimal
 import kotlinx.android.synthetic.main.animal_ticket.view.tvDescription
@@ -77,6 +78,10 @@ inner class AnimalAdapter: BaseAdapter{
                 intent.putExtra("des",animal.des!!)
                 intent.putExtra("image",animal.image!!)
                 context!!.startActivity(intent)
+
+            }
+            myView.ivDel.setOnClickListener {
+                delete(position)
             }
             return myView
         }
